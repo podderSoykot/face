@@ -28,7 +28,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application files
 COPY . .
 
-# Expose FastAPI default port
+# Expose FastAPI default ports
 EXPOSE 8000
 
 # Start the FastAPI app in development mode (with reload)
