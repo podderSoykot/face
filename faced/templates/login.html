@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login via Face</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-6 rounded shadow text-center space-y-4">
+    <h2 class="text-xl font-bold">Login via IP Camera</h2>
+    <button id="trigger-login" class="bg-blue-600 text-white px-4 py-2 rounded">Start Face Login</button>
+    <div id="result" class="text-sm mt-4 text-gray-700"></div>
+    <script>
+      document.getElementById("trigger-login").onclick = async () => {
+        const resultDiv = document.getElementById("result");
+        resultDiv.textContent = "Processing login...";
+        try {
+          const res = await fetch("/login/", { method: "POST" });
+          const data = await res.json();
+          if (res.ok) {
+            resultDiv.innerHTML = `<span class='text-green-600 font-semibold'>${data.message}</span><br><span>Confidence: ${data.confidence}</span>`;
+          } else {
+            resultDiv.innerHTML = `<span class='text-red-600 font-semibold'>${data.detail}</span>`;
+          }
+        } catch {
+          resultDiv.textContent = "Error connecting to camera.";
+        }
+      };
+    </script>
+  </div>
+</body>
+</html>

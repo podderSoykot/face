@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register User</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+  <form class="max-w-xl mx-auto bg-white p-6 rounded shadow space-y-4" method="post" action="/register/" enctype="multipart/form-data">
+    <h2 class="text-xl font-bold mb-2">Register New User</h2>
+    <input name="name" class="w-full border p-2 rounded" placeholder="Name" required>
+    <input name="employee_no" class="w-full border p-2 rounded" placeholder="Employee No." required>
+    <input name="gender" class="w-full border p-2 rounded" placeholder="Gender" required>
+    <input name="birthday" type="date" class="w-full border p-2 rounded" required>
+    <input name="id_no" class="w-full border p-2 rounded" placeholder="ID No." required>
+    <input name="card_no" class="w-full border p-2 rounded" placeholder="Card No." required>
+    <input name="email" type="email" class="w-full border p-2 rounded" placeholder="Email" required>
+    <input name="position" class="w-full border p-2 rounded" placeholder="Position" required>
+    <input name="department" class="w-full border p-2 rounded" placeholder="Department" required>
+    <input name="start_time" type="time" class="w-full border p-2 rounded" required>
+    <input name="end_time" type="time" class="w-full border p-2 rounded" required>
+    <input name="mobile" class="w-full border p-2 rounded" placeholder="Mobile" required>
+    <input name="company" class="w-full border p-2 rounded" placeholder="Company" required>
+    <textarea name="remark" class="w-full border p-2 rounded" placeholder="Remark"></textarea>
+    <input type="file" name="file" class="w-full border p-2 rounded" accept="image/*" required>
+    <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded">Register</button>
+  </form>
+</body>
+</html>

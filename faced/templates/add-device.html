@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Device</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+  <form class="max-w-md mx-auto bg-white p-6 rounded shadow space-y-4" method="post" action="/add-device/">
+    <h2 class="text-xl font-bold">Register IP Camera</h2>
+    <input name="name" class="w-full border p-2 rounded" placeholder="Device Name" required>
+    <input name="ip" class="w-full border p-2 rounded" placeholder="IP Address" required>
+    <input name="username" class="w-full border p-2 rounded" placeholder="Username" required>
+    <input name="password" type="password" class="w-full border p-2 rounded" placeholder="Password" required>
+    <input name="location" class="w-full border p-2 rounded" placeholder="Location" required>
+    <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded">Register</button>
+  </form>
+</body>
+</html>

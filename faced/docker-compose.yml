@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  face-auth-app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - TZ=Asia/Shanghai
+    tty: true         # Enables interactive mode
+    stdin_open: true  # Keeps stdin open
+    restart: always

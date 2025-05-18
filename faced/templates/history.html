@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login History</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+  <h2 class="text-2xl font-bold mb-4">Login History</h2>
+  <div class="overflow-x-auto">
+    <table class="min-w-full table-auto border-collapse bg-white shadow-md">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-4 py-2">Name</th>
+          <th class="border px-4 py-2">Location</th>
+          <th class="border px-4 py-2">Time</th>
+          <th class="border px-4 py-2">Access</th>
+          <th class="border px-4 py-2">Confidence</th>
+          <th class="border px-4 py-2">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+        <tr>
+          <td class="border px-4 py-2">{{ log.name }}</td>
+          <td class="border px-4 py-2">{{ log.location }}</td>
+          <td class="border px-4 py-2">{{ log.time.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+          <td class="border px-4 py-2">{{ log.access_result }}</td>
+          <td class="border px-4 py-2">{{ log.confidence }}</td>
+          <td class="border px-4 py-2">
+            {% if log.live_image %}
+              <img src="data:image/jpeg;base64,{{ log.live_image | b64encode }}" class="h-20 inline-block">
+            {% else %}
+              N/A
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

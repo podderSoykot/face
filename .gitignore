@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# SQLite database file
+*.db
+
+# Docker image archive
+*.tar
+
+# VS Code settings (optional)
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Logs (optional)
+*.log
+
+# Environment variables (optional if used)
+.env
